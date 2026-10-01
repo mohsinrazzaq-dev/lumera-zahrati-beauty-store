@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lumera Beauty Care & Zahrati Beauty — متجر عناية وجمال بالجملة والمفرد في سلطنة عُمان">
+  <title>Lumera Beauty Care | Zahrati Beauty</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>🚚 توصيل سريع داخل سلطنة عُمان</span>
+      <span>الدفع عند الاستلام متاح لبعض المناطق</span>
+      <a href="#branches">فروعنا ومواقعنا ←</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="brand-mark">L</span>
+        <span>
+          <strong>Lumera</strong>
+          <small>BEAUTY CARE</small>
+        </span>
+        <i></i>
+        <span>
+          <strong class="zahrati">زهرتي</strong>
+          <small>BEAUTY</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="#shop">المتجر</a>
+        <a href="#brands">البراندات</a>
+        <a href="#wholesale">الجملة</a>
+        <a href="#about">من نحن</a>
+        <a href="#branches">الفروع</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="بحث" onclick="focusSearch()">⌕</button>
+        <button class="cart-btn" onclick="openCart()">🛒 <span id="cartCount">0</span></button>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="#shop" onclick="toggleMenu()">المتجر</a>
+      <a href="#brands" onclick="toggleMenu()">البراندات</a>
+      <a href="#wholesale" onclick="toggleMenu()">الجملة</a>
+      <a href="#about" onclick="toggleMenu()">من نحن</a>
+      <a href="#branches" onclick="toggleMenu()">الفروع</a>
+      <a href="#contact" onclick="toggleMenu()">تواصل معنا</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow">LUMERA × ZAHRATI</span>
+          <h1>عنايتك اليومية<br><em>تستحق الأفضل.</em></h1>
+          <p>اكتشفي مجموعة مختارة من منتجات العناية بالبشرة والشعر والجمال — بالجملة والمفرد.</p>
+          <div class="hero-buttons">
+            <a href="#shop" class="btn btn-dark">تسوقي الآن <span>←</span></a>
+            <a href="#wholesale" class="btn btn-light">طلبات الجملة</a>
+          </div>
+          <div class="hero-trust">
+            <span>✓ منتجات مختارة بعناية</span>
+            <span>✓ فروع متعددة في عُمان</span>
+            <span>✓ خدمة للجملة والمفرد</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <span>مختارات هذا الأسبوع</span>
+          <strong>Glow<br>Collection</strong>
+          <p>عناية وإشراقة تبدأ من روتينك.</p>
+          <a href="#shop">اكتشفي المجموعة →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories container">
+      <div class="section-head">
+        <div><span class="eyebrow">SHOP BY CATEGORY</span><h2>تسوّقي حسب الفئة</h2></div>
+        <a href="#shop">عرض الكل →</a>
+      </div>
+      <div class="category-grid">
+        <a href="#shop" class="category-card cat1"><span>عناية بالبشرة</span><small>Skincare</small></a>
+        <a href="#shop" class="category-card cat2"><span>عناية بالشعر</span><small>Haircare</small></a>
+        <a href="#shop" class="category-card cat3"><span>الجمال والمكياج</span><small>Beauty</small></a>
+        <a href="#shop" class="category-card cat4"><span>الجسم والعناية</span><small>Body Care</small></a>
+      </div>
+    </section>
+
+    <section id="shop" class="shop-section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">CURATED FOR YOU</span><h2>منتجات مميزة</h2></div>
+          <div class="filters">
+            <button class="filter active" data-filter="all">الكل</button>
+            <button class="filter" data-filter="skin">البشرة</button>
+            <button class="filter" data-filter="hair">الشعر</button>
+            <button class="filter" data-filter="body">الجسم</button>
+          </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <article class="product-card" data-cat="skin">
+            <div class="product-image">
+              <span class="badge">الأكثر مبيعاً</span>
+              <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=900&q=85" alt="منتج عناية بالبشرة">
+              <button class="quick" onclick="addToCart('سيروم الإشراقة', 12.5)">+ إضافة للسلة</button>
+            </div>
+            <div class="product-info"><small>SKINCARE</small><h3>سيروم الإشراقة</h3><p>روتين يومي لبشرة أكثر نضارة</p><strong>12.500 ر.ع</strong></div>
+          </article>
+
+          <article class="product-card" data-cat="hair">
+            <div class="product-image">
+              <span class="badge soft">جديد</span>
+              <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=900&q=85" alt="منتج عناية بالشعر">
+              <button class="quick" onclick="addToCart('مجموعة العناية بالشعر', 18)">+ إضافة للسلة</button>
+            </div>
+            <div class="product-info"><small>HAIRCARE</small><h3>مجموعة العناية بالشعر</h3><p>ترطيب ولمعان للعناية اليومية</p><strong>18.000 ر.ع</strong></div>
+          </article>
+
+          <article class="product-card" data-cat="body">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85" alt="منتج عناية بالجسم">
+              <button class="quick" onclick="addToCart('مجموعة الجسم الفاخرة', 15)">+ إضافة للسلة</button>
+            </div>
+            <div class="product-info"><small>BODY CARE</small><h3>مجموعة الجسم الفاخرة</h3><p>نعومة وعناية بلمسة فاخرة</p><strong>15.000 ر.ع</strong></div>
+          </article>
+
+          <article class="product-card" data-cat="skin">
+            <div class="product-image">
+              <span class="badge">اختيارنا</span>
+              <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=900&q=85" alt="كريم للوجه">
+              <button class="quick" onclick="addToCart('كريم الترطيب اليومي', 9.75)">+ إضافة للسلة</button>
+            </div>
+            <div class="product-info"><small>SKINCARE</small><h3>كريم الترطيب اليومي</h3><p>ترطيب مريح ولمسة ناعمة</p><strong>9.750 ر.ع</strong></div>
+          </article>
+
+          <article class="product-card" data-cat="hair">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=85" alt="زيت للشعر">
+              <button class="quick" onclick="addToCart('زيت الشعر المغذي', 7.5)">+ إضافة للسلة</button>
+            </div>
+            <div class="product-info"><small>HAIRCARE</small><h3>زيت الشعر المغذي</h3><p>تغذية ولمعان للشعر</p><strong>7.500 ر.ع</strong></div>
+          </article>
+
+          <article class="product-card" data-cat="body">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=85" alt="عناية للجسم">
+              <button class="quick" onclick="addToCart('لوشن الجسم الناعم', 8.25)">+ إضافة للسلة</button>
+            </div>
+            <div class="product-info"><small>BODY CARE</small><h3>لوشن الجسم الناعم</h3><p>ترطيب يومي وانتعاش</p><strong>8.250 ر.ع</strong></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="brands" class="brands-section container">
+      <div class="section-head"><div><span class="eyebrow">GLOBAL BEAUTY</span><h2>براندات نثق بها</h2></div><span class="muted">تشكيلة مختارة من أشهر العلامات</span></div>
+      <div class="brand-row">
+        <div>SESDERMA</div><div>LA ROCHE-POSAY</div><div>THE ORDINARY</div><div>CERAVE</div><div>VICHY</div><div>OLAPLEX</div>
+      </div>
+    </section>
+
+    <section id="wholesale" class="wholesale">
+      <div class="container wholesale-inner">
+        <div>
+          <span class="eyebrow">FOR BUSINESS</span>
+          <h2>طلبات الجملة<br><em>بأسلوب أسهل.</em></h2>
+          <p>هل تملك صالوناً أو عيادة أو متجراً؟ أرسل طلب الجملة وسيتواصل معك فريقنا لتقديم الأسعار والتوفر والكميات المناسبة.</p>
+          <a class="btn btn-dark" href="https://wa.me/96800000000" target="_blank">تواصل للجملة عبر واتساب ↗</a>
+        </div>
+        <div class="wholesale-points">
+          <div><b>01</b><span><strong>اختيار المنتجات</strong><small>تصفح تشكيلتنا العالمية.</small></span></div>
+          <div><b>02</b><span><strong>إرسال طلب الجملة</strong><small>أرسل الكميات والبراندات المطلوبة.</small></span></div>
+          <div><b>03</b><span><strong>عرض مخصص</strong><small>نجهز لك عرضاً يناسب احتياجك.</small></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about container">
+      <div class="about-image"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1200&q=85" alt="منتجات تجميل"></div>
+      <div class="about-copy">
+        <span class="eyebrow">LUMERA BEAUTY CARE × ZAHRATI BEAUTY</span>
+        <h2>كل ما تحتاجينه<br>لروتين جمالك.</h2>
+        <p>نقدم منتجات العناية والجمال بالجملة والمفرد، مع تجربة تسوق سهلة وخدمة قريبة من عملائنا في سلطنة عُمان.</p>
+        <div class="stats"><div><strong>27K+</strong><span>متابع</span></div><div><strong>+10</strong><span>سنوات خبرة</span></div><div><strong>100+</strong><span>منتج مختار</span></div></div>
+      </div>
+    </section>
+
+    <section id="branches" class="branches">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">VISIT US</span><h2>فروعنا</h2></div><span class="muted">نحن أقرب إليك</span></div>
+        <div class="branch-grid">
+          <div class="branch"><span class="branch-num">01</span><h3>مسقط</h3><p>فرع لوميرا بيوتي كير</p><a href="#" onclick="return false">عرض الموقع →</a></div>
+          <div class="branch"><span class="branch-num">02</span><h3>الخوض</h3><p>فرع زهرتي بيوتي</p><a href="#" onclick="return false">عرض الموقع →</a></div>
+          <div class="branch"><span class="branch-num">03</span><h3>فرع آخر</h3><p>تفاصيل الفرع ومواعيد العمل</p><a href="#" onclick="return false">عرض الموقع →</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter container">
+      <div><span class="eyebrow">STAY BEAUTIFUL</span><h2>كوني أول من يعرف جديدنا.</h2></div>
+      <form onsubmit="subscribe(event)"><input type="email" placeholder="البريد الإلكتروني" required><button class="btn btn-dark">اشتراك</button></form>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand"><div class="brand"><span class="brand-mark">L</span><span><strong>Lumera</strong><small>BEAUTY CARE</small></span></div><p>منتجات عناية وجمال مختارة بعناية — بالجملة والمفرد في سلطنة عُمان.</p></div>
+      <div><h4>المتجر</h4><a href="#shop">جميع المنتجات</a><a href="#brands">البراندات</a><a href="#wholesale">طلبات الجملة</a></div>
+      <div><h4>معلومات</h4><a href="#about">من نحن</a><a href="#branches">الفروع</a><a href="#">سياسة الاستبدال</a></div>
+      <div><h4>تواصل</h4><a href="https://wa.me/96800000000">واتساب</a><a href="https://instagram.com/" target="_blank">Instagram</a><a href="mailto:hello@lumera.example">البريد الإلكتروني</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 Lumera Beauty Care & Zahrati Beauty</span><span>صُنع بعناية لتجربة أجمل ✦</span></div>
+  </footer>
+
+  <div id="cartModal" class="modal" onclick="if(event.target===this)closeCart()">
+    <div class="cart-panel">
+      <div class="cart-head"><h2>سلة التسوق</h2><button onclick="closeCart()">×</button></div>
+      <div id="cartItems" class="cart-items"><div class="empty">السلة فارغة حالياً 🛍️</div></div>
+      <div class="cart-total"><span>الإجمالي</span><strong id="cartTotal">0.000 ر.ع</strong></div>
+      <a class="btn btn-dark checkout" href="https://wa.me/96800000000" target="_blank">إتمام الطلب عبر واتساب</a>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">تمت الإضافة إلى السلة ✓</div>
+  <script src="script.js"></script>
+</body>
+</html>
